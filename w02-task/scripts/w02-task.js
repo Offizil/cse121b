@@ -47,7 +47,7 @@ imageElement.setAttribute('alt', `Profile image of ${fullName}`);
 let FaveFoods = ['coconut rice', 'afang soup', 'melon soup', 'jollof rice',];
 
 foodElement.innerHTML = FaveFoods;
-console.log(FaveFoods); //display 
+// console.log(FaveFoods); //display 
 
 let faveFoodOat = 'Bread';
 
@@ -69,7 +69,7 @@ FaveFoods.shift();
 // Append the array output showing 
 // the modified array, using a line break as shown
 foodElement.innerHTML += `<br>${FaveFoods}`;
-console.log(foodElement);
+// console.log(foodElement);
 
 // Remove the last element in the favorite food array.
 FaveFoods.pop();
