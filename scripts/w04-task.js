@@ -17,7 +17,7 @@ let myProfile = {
 
 
 
-/* Populate Profile Object with placesLive objects */
+// /* Populate Profile Object with placesLive objects *//
 myProfile.placesLived.push(
     {
         place: 'Calabar, CRS',
