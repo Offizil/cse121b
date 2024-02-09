@@ -7,7 +7,7 @@ let templeList = [];
 
 
 
-/* async displayTemples Function */
+/* async displayTemples Function *///
 const displayTemples = (temples) => {
     // list of temples
     temples.forEach(a_temple => {
