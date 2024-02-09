@@ -15,7 +15,7 @@ const displayTemples = (temples) => {
         let h3Element = document.createElement('h3');
         h3Element.textContent = a_temple.templeName; //
         let imageElement = document.createElement('img');
-        imageElement.src = a_temple.ImageUrl;
+        imageElement.src = a_temple.imageUrl; //
         imageElement.alt = a_temple.location;
 
         articleElememt.appendChild(h3Element);
