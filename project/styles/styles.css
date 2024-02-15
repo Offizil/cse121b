@@ -1,0 +1,89 @@
+body {
+    width: 100%;
+    background-color: beige;
+    font-size: 18px;
+}
+
+header {
+    background-color: #467ac7;
+    color: white;
+    width: 100%;
+    
+    padding: 20px;
+}
+header h3 {
+    text-align: left;
+    margin-left: 40px;
+}
+
+#search_area {
+    text-align: left;
+    margin-left: 60px;
+    /* border: solid;
+    padding: 10px;
+    border-width: 0.4px;
+    margin-top: 20px; */
+}
+
+
+#username {
+    /* border-radius: 5%; */
+    border-style: groove;
+    width: 80% ;
+    height: 30px;
+    border-width: 1.5px;
+    border-color: #467ac7;
+}
+
+
+hr {
+    color: #467ac7;
+}
+#submit_button {
+    background-color: #467ac7;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+
+#display_area {
+    display: grid;
+    width: 80%;
+    height: 350px;
+    text-align: center;
+    /* enable-background: new; */
+    grid-template-rows: 1fr;
+    grid-template-columns:1fr 4fr ;
+    gap: 30px;
+    background-color: #467ac7;
+    /* border-radius: 5%; */
+    border: solid 0.4px #467ac7 ;
+    padding: 10px;
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+#display_card {
+    grid-row: auto;
+    grid-column: 1/1;
+    background-color: antiquewhite;
+
+}
+#info_card {
+    grid-column: 2/3;
+}
+
+
+
+footer{
+    text-align: center;
+    margin-left: 60px;
+}
