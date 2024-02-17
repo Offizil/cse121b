@@ -103,15 +103,15 @@ label {
     margin-bottom: 5px;
   }
 
-input {
+.form-group input {
     padding: .35rem;
 
     width: 100%;
     padding: 8px;
-    box-sizing: border-box;
+      box-sizing: border-box;
 }
 
-input[type="text"] {
+.form-group input[type="text"] {
     padding: .5rem;
     background-color: #ffffff;
     color: #000000;
