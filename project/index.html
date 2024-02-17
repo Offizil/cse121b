@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Finder</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -15,21 +17,40 @@
             <h1> Search GitHub Users</h1>
             <p>Enter a username to search for user profile and repositries:</p>
 
-            <form > <!--action="/action_page.php"-->
-                <input type="text" id="username" name="username"><br><br>
-                <input type="submit" id="submit_button" value="Submit">
+            <form id="search_form" > <!--action="/action_page.php"-->
+                <input type="text"  placeholder="   Search GitHub Username..." id="search_box" name="username"><br><br>
+                <input type="submit" id="submit_button" value="submit">
               </form>
 
         </div>
         <section id="display_area">
+
             <div id="display_card">
-            <img id="profilepic" src="#" alt="profile pic here">
-            <a id="view_profile" href="#"> View profile</a>
+                <img id="profilepic" src="#" alt="profile pic here">
+                <a id="view_profile" href="#"> View profile</a>
             </div>
+
             <div id="info_card">
-                <div id="repo">Repositories</div>
-                <div id="followers">followers</div>
-                <div id="following">following</div>
+                <form>
+                    
+                    <div class="form-group">
+                        <label for="repo">Repositories:</label>
+                        <input type="text" id="repo" name="repo" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="followers">followers:</label>
+                        <input type="text" id="followers" name="followers" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="following">following:</label>
+                        <input type="text" id="following" name="following" disabled>
+                    </div>
+                        <!-- <div id="repo">Repositories</div>
+                        <div id="followers">followers</div>
+                        <div id="following">following</div> -->
+                </form>
             </div>
             <div id="info">
 
@@ -45,5 +66,6 @@
         <p> GitHub Finder by Edem Offiong | Byu-Idaho | February 2024</p>
         <hr>
     </footer>
+    <!-- <script src="scripts/main.js" defer></script> -->
 </body>
 </html>
