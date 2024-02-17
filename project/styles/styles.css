@@ -62,7 +62,9 @@ hr {
     background-color: rgb(9, 120, 44);
 }
 
-
+.user-not-found{
+    display: none;
+}
 #display_area {
     display: grid;
     width: 80%;
@@ -91,8 +93,20 @@ hr {
     padding: 20px;
     margin: 0 auto;
     max-width: 80%;
-    display: grid; /*  follow this up*/
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
+
+#divuser_id {
+    grid-area: 1/1/2/2;
+}
+
+#divrepo {
+    grid-area: 1/2/2/3;
+}
+
 
 label {
     padding: .35rem;
@@ -123,7 +137,7 @@ label {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 90%
+    width: 90%;
 }
 
 
