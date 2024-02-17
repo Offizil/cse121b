@@ -58,6 +58,10 @@ hr {
 
 }
 
+#submit_button:active {
+    background-color: rgb(9, 120, 44);
+}
+
 
 #display_area {
     display: grid;
