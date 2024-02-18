@@ -1,43 +1,19 @@
 const search_button = document.querySelector("#submit_button");
 const search_box = document.querySelector("#search_box");
 const accessToken = "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";
-let userInput = document.querySelector("#search_box").value;
 
-document.getElementById('search_form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  // Check if the pressed key is Enter (key code 13)
-  if (event.key === 'Enter') {
-    // Get the input value
-    userInput = search_box.value.split(" ").join("");
 
-    // Make the fetch request
-    fetch(`https://api.github.com/users/${userInput}`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Display the user data as JSON in the info_card
-      document.getElementById('repo').value = data.public_repos;
-      document.getElementById('followers').value = data.followers;
-      document.getElementById('following').value = data.following;
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }
-});
 
-search_button.addEventListener("click", () => {
+
+search_form.addEventListener("submit", (event) => {
+  event.preventDefault(); //Prevent the default form submission behavior
+  // i changed from using click event on the submit button, 
+  // ill be using the submit event on the frm itself since this is apparently more common
+
   // Get the user name from the search input and remove any spaces
-  userInput = userInput.split(" ").join("");
+  let userInput = document.querySelector("#search_box");
+
+  userInput = userInput.value.split(" ").join("");
 
   
   // Get the 'user not found' element
@@ -58,52 +34,59 @@ search_button.addEventListener("click", () => {
   })
   .then(data => {
 
-    let repos = data.public_repos;
+  
+    
 
 
     let followers = data.followers;
-    document.querySelector("#followers").value = followers;
+    document.getElementById("followers").value = followers;
 
 
     let following = data.following;
-    document.querySelector("#following").value = followers;
+    document.querySelector("#following").value = following;
 
-    let datejoined =  data.created_at;
-    document.querySelector("#created_at").value = datejoined;
+    // let datejoined =  data.created_at;
+    let joinFullDate = data.created_at;
+            let dateStr = joinFullDate.substring(0,10)
+            let dateSplit = dateStr.split("-")
+            const monthNumber = dateSplit[1] - 1;
+            const monthDay = dateSplit[0] ;
+            const monthName = new Date(Date.UTC(0, monthNumber)).toLocaleString('en-US', { month: 'short' });
+
+    document.querySelector("#created_at").value = `${monthName}, ${monthNumber}, ${monthDay}`;
 
 
     let updatedAt = data.updated_at;
-    document.querySelector("#updated_at").value = updatedAt;
+    let dateStri = updatedAt.substring(0,10)
+    let dateSplitt = dateStri.split("-")
+    const monthNumberr = dateSplitt[1] - 1;
+    const monthDayy = dateSplitt[0] ;
+    const monthNamee = new Date(Date.UTC(0, monthNumber)).toLocaleString('en-US', { month: 'short' });
+    
+    document.querySelector("#updated_at").value = `${monthNamee}, ${monthNumberr}, ${monthDayy}`;
 
 
-    let organization = data.organization;
-    document.querySelector("#organization").value = organization;
+    let organization = data.organizations_url
+    document.querySelector("#organizations").value = organization;
 
     let profile_pic = data.avatar_url;
-    document.querySelector("profilepic").src = profile_pic;
+    document.querySelector("#profilepic").src = profile_pic;
 
     
     let hmtl_profile = data.html_url;
     document.querySelector("#view_profile").href = hmtl_profile;
 
     let userid = data.login;
-    document.querySelector("#user_id").value = userid;
+    document.querySelector("#user_id").value = "@" + userid;
+    
+    let reposs = data.public_repos;
+    document.querySelector("#divrepo").value = reposs;
 
 
-
-
+            
    
   })
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
   });
-}
-  
-  
-
-
-
-
-
-
 })
