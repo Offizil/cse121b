@@ -60,7 +60,7 @@ function filterTemples(temples) {
             displayTemples(notutah);
             break;
         case 'older':
-            let older =temples.filter((temple) => new Date (temple.dedicated) > new Date(1950, 0, 1) ) ;
+            let older =temples.filter((temple) => new Date (temple.dedicated) < new Date(1950, 0, 1) ) ;
             displayTemples(older)
             break;
         case 'all':
