@@ -80,7 +80,7 @@ search_form.addEventListener("submit", (event) => {
     document.querySelector("#user_id").value = "@" + userid;
     
     let reposs = data.public_repos;
-    document.querySelector("#divrepo").value = reposs;
+    document.querySelector("#repo").value = reposs;
 
 
             
